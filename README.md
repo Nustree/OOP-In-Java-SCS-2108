@@ -1,2 +1,3 @@
-# OOP-In-Java-SCS-2108
-This is a object oriented programming module that utilises Java.
+# Object Oriented Programming in Java
+## Course code: SCS 2108
+
