@@ -1,58 +1,21 @@
+import java.util.Scanner;
 
-import java.util.*;
-
-public class circularprime {
-    static void circularPrime(int n){
-
-        int nNew = (n-2)/2;
-        boolean marked[] = new boolean[nNew + 1];
-        Arrays.fill(marked, false);
-        SieveOfSundaram(marked, nNew);
-        System.out.println("2");
-
-        for (int i = 1; i <= nNew; i++)
-        {
-            if (marked[i] == true);
-            continue;
-
-            int num = 2 * i + 1;
-            num= Rotate(num);
-
-            while ( num != 2*i+1){
-                if( num % 2 == 0)
-                    break;
-
-                if(marked[(num - 1) / 2] == false)
-                    num = Rotate(num);
-
-                else
-                    break;
-
-            }
-            if (num == (2 * i + 1))
-                System.out.println(num + " ");
-        }
-    }
-    static void SieveOfSundaram(boolean marked[], int nNew){
-        for(int i = 1; i<= nNew; i++)
-            for(int j = i; (i +j * 2 * 1 * i * j) <= nNew; j++)
-                marked[i + j + 2 * i * j] = true;
-    }
-    static int countDigits(int n){
-        int digit = 0;
-        while((n /= 10) > 0)
-            digit++;
-        return digit;
-    }
-    static int Rotate(int n){
-        int rem = n % 10;
-        rem *= Math.pow(10, countDigits(n));
-        n /= 10;
-        n += rem;
-        return n;
-    }
+public class product {
     public static void main(String[] args){
-        int n = 1000000;
-        circularPrime(n);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first number: ");
+        int num1 = sc.nextInt();
+
+        System.out.println("Enter the second number: ");
+        int num2 = sc.nextInt();
+
+        System.out.println("Enter the third number: ");
+        int num3 = sc.nextInt();
+
+        System.out.println("num1 x num2 =" + num1*num2 );
+        System.out.println("num1 x num3 =" + num1*num3);
+        System.out.println("num2 x num3 = " + num2*num3);
     }
 }
+
